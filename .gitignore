@@ -1,3 +1,6 @@
 Udemy-ML-Course/
 *.mov
 programs/7.DeepLearning/dataset/
+pytorch/data/
+pytorch/models/
+*.pyc
