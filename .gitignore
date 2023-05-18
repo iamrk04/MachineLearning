@@ -3,4 +3,8 @@ Udemy-ML-Course/
 programs/7.DeepLearning/dataset/
 pytorch/data/
 pytorch/models/
+pytorch/runs/
+pytorch/flagged/
 *.pyc
+.vscode/
+kaggle/

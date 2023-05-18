@@ -16,7 +16,7 @@ sc = StandardScaler()
 x_train = sc.fit_transform(x_train)
 x_test = sc.transform(x_test)
 
-# Training the Decision Tree Classification model on the Training set
+# Training the Random Tree Classification model on the Training set
 from sklearn.ensemble import RandomForestClassifier
 classifier = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)
 classifier.fit(x_train, y_train)
