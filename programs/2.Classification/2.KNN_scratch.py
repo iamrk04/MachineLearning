@@ -1,3 +1,5 @@
+# Video Link: https://www.youtube.com/watch?v=ngLyX54e1LU&list=PLqnslRFeH2Upcrywf-u2etjdxxkL8nl7E&index=1
+
 from collections import Counter
 
 import numpy as np
