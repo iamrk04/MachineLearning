@@ -1,3 +1,6 @@
+# Video Link: https://www.youtube.com/watch?v=JDU3AzH3WKg&list=PLqnslRFeH2Upcrywf-u2etjdxxkL8nl7E&index=3
+# very similar to linear regression, just limit the output between 0 and 1 via sigmoid fn
+
 import numpy as np
 
 
@@ -31,8 +34,8 @@ class LogisticRegression:
 
     def predict(self, X):
         linear_model = np.dot(X, self.weights) + self.bias
-        y_predicted = self._sigmoid(linear_model)
-        y_predicted_cls = [1 if i > 0.5 else 0 for i in y_predicted]
+        y_prob = self._sigmoid(linear_model)
+        y_predicted_cls = [1 if prob > 0.5 else 0 for prob in y_prob]
         return np.array(y_predicted_cls)
 
     def _sigmoid(self, x):

@@ -1,10 +1,20 @@
+# Video Link:   https://www.youtube.com/watch?v=4swNt7PiamQ&list=PLqnslRFeH2Upcrywf-u2etjdxxkL8nl7E&index=2
+# Problem Info: Fit a linear model through the given data, and use this linear model to predict
+
+# y_pred = X * w + b
+# w = w - lr * dw = w - lr * 1/n_samples * (y_pred - y) * X
+# b = b - lr * db = b - lr * 1/n_samples * (y_pred - y)
+# J = 1/n_samples * (y_pred - y) ** 2
+
+# Note: Dot product is simply matrix multiplication
+
 import numpy as np
 
 
 def r2_score(y_true, y_pred):
     corr_matrix = np.corrcoef(y_true, y_pred)
     corr = corr_matrix[0, 1]
-    return corr ** 2
+    return corr**2
 
 
 class LinearRegression:
@@ -33,8 +43,8 @@ class LinearRegression:
             self.bias -= self.lr * db
 
     def predict(self, X):
-        y_approximated = np.dot(X, self.weights) + self.bias
-        return y_approximated
+        y_pred = np.dot(X, self.weights) + self.bias
+        return y_pred
 
 
 # Testing
