@@ -1,4 +1,5 @@
-# Video Link: https://www.youtube.com/watch?v=ngLyX54e1LU&list=PLqnslRFeH2Upcrywf-u2etjdxxkL8nl7E&index=1
+# Video Link:   https://www.youtube.com/watch?v=ngLyX54e1LU&list=PLqnslRFeH2Upcrywf-u2etjdxxkL8nl7E&index=1
+# Problem Info: Classify a test point based on the k-nearest neighbors from train data (take most common label)
 
 from collections import Counter
 
