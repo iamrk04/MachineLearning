@@ -12,17 +12,23 @@ class KNN:
 
     def __init__(self, k):
         self.k = k
-    
+
+    # TC: O(n_samples * log(n_samples))
+    # SC: O(n_samples * n_features)
     def fit(self, X, y):
         # Sort the training data based on the first feature
         sorted_indices = np.argsort(X[:, 0])
         self.X_train = X[sorted_indices]
         self.y_train = y[sorted_indices]
-    
+
+    # TC: O(n_samples_test * TC(_predict))
+    # SC: O(n_samples_test)
     def predict(self, X):
         pred = [self._predict(x) for x in X]
         return np.array(pred)
-    
+
+    # TC: O(log(n_samples_train) + k * n_features + k * log k)
+    # SC: O(k)
     def _predict(self, x):
         # Use binary search to find the position to insert x
         idx = bisect_left(self.X_train[:, 0], x[0])

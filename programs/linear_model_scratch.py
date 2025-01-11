@@ -20,6 +20,8 @@ class LinearModel:
     def activation_fn(self, x):
         raise NotImplementedError
 
+    # TC: O(n_iters * n_samples * n_features)
+    # SC: O(n_features + n_samples)
     def fit(self, X, y):
         n_samples, n_features = X.shape
 
@@ -33,6 +35,8 @@ class LinearModel:
             self.wt -= self.lr * dw
             self.wt -= self.lr * db
 
+    # TC: O(n_samples * n_features)
+    # SC: O(n_samples)
     def predict(self, X):
         y_pred = self.activation_fn(np.dot(X, self.wt) + self.bias)
         return y_pred

@@ -14,14 +14,20 @@ class KNN:
     def __init__(self, k=3):
         self.k = k
 
+    # TC: O(1)
+    # SC: O(n_samples * n_features) 
     def fit(self, X, y):
         self.X_train = X
         self.y_train = y
 
+    # TC: O(n_samples_test * TC(_predict))
+    # SC: O(n_samples_test)
     def predict(self, X):
         y_pred = [self._predict(x) for x in X]
         return np.array(y_pred)
 
+    # TC: O(n_samples_train * n_features + n_samples_train * log (n_samples_train) + k * log k)
+    # SC: O(n_samples + k)
     def _predict(self, x):
         distances = [euclidean_distance(x, x_train) for x_train in self.X_train]
         # Sort by distance and return indices of the first k neighbors

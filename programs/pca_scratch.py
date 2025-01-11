@@ -7,7 +7,9 @@ class PCA:
         self.n_components = n_components
         self.components = None
         self.mean = None
-    
+
+    # TC: O(n_features**2 * n_samples + n_features**3 + n_features log (n_features))
+    # SC: O(n_features ** 2)
     def fit(self, X):
         # center the data
         self.mean = np.mean(X, axis=0)
@@ -28,6 +30,8 @@ class PCA:
         # store first n eigen vectors
         self.components = eigen_vectors[: self.n_components]
     
+    # TC: O(n_samples * n_features + n_samples * n_features * k)
+    # SC : O(n_samples * k)
     def transform(self, X):
         X = X - self.mean
         return np.dot(X, self.components.T)
