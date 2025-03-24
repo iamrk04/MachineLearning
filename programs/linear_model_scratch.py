@@ -33,7 +33,7 @@ class LinearModel:
             dw = (1 / n_samples) * np.dot(X.T, y_pred - y)
             db = (1 / n_samples) * np.sum(y_pred - y)
             self.wt -= self.lr * dw
-            self.wt -= self.lr * db
+            self.bias -= self.lr * db
 
     # TC: O(n_samples * n_features)
     # SC: O(n_samples)

@@ -39,7 +39,7 @@ class KNN:
         
         neighbors = []
         for i in range(left, right):
-            neighbors.append((self.euclidean_distance(x, self.X_train[i]), self.y_train[i]))
+            neighbors.append((euclidean_distance(x, self.X_train[i]), self.y_train[i]))
         
         # Sort neighbors by distance and get the k closest ones
         neighbors.sort(key=lambda x: x[0])
