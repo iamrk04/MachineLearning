@@ -7,9 +7,10 @@
 
 
 import numpy as np
+from abc import ABC, abstractmethod
 
 
-class LinearModel:
+class LinearModel(ABC):
 
     def __init__(self, lr=0.001, n_iters=1000):
         self.lr = lr
@@ -17,6 +18,7 @@ class LinearModel:
         self.wt = None
         self.bias = None
 
+    @abstractmethod
     def activation_fn(self, x):
         raise NotImplementedError
 
